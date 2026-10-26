@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" href="https://fav.farm/%F0%9F%93%8B" />
+  </head>
+  <body>
+    <main id="wrapper">
+      <section id="sidebar"></section>
+      <section id="header">
+        <h1>What will you do today?</h1>
+      </section>
+      <section id="content"></section>
+      <section id="input">
+        <form action="" method="get" class="form-sample">
+          <div>
+            <label for="title"
+              ><input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Add your task or todo"
+            /></label>
+          </div>
+          <div>
+            <label for="description"
+              ><input
+                type="text"
+                name="description"
+                id="description"
+                placeholder="Add task description"
+            /></label>
+          </div>
+          <div class="bottom-part">
+            <div class="select-forms">
+              <div class="date options">
+                <legend>Select due date</legend>
+                <input type="date" name="date" id="date" />
+              </div>
+              <div class="priority options">
+                <label for="priority-select">Select priority</label>
+                <select name="priority" id="priority-select" required>
+                  <option value="" disabled hidden selected>
+                    Choose task's priority
+                  </option>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <div class="projects options">
+                <label for="project-select">Select project</label>
+                <select name="project" id="project-select" required>
+                  <option value="" disabled hidden selected>
+                    Choose task's project
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="submit-btn">
+              <input type="submit" value="Add task" />
+            </div>
+          </div>
+        </form>
+      </section>
+      <div id="modal" class="modal-overlay">
+        <form action="" method="get" class="modal-box">
+          <div class="modal header">
+            <span class="modal-title"></span>
+            <button id="close-modal" class="modal-close">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-x-icon lucide-x"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="modal top-part">
+            <div>
+              <label for="title-edit"
+                ><input type="text" name="title-edit" id="title-edit"
+              /></label>
+            </div>
+            <div>
+              <label for="desc-edit"
+                ><input type="text" name="desc-edit" id="desc-edit"
+              /></label>
+            </div>
+          </div>
+          <div class="modal bottom-part">
+            <div class="select-forms">
+              <div class="date options">
+                <legend>Select due date</legend>
+                <input type="date" name="date" id="date-edit" />
+              </div>
+              <div class="priority options">
+                <label for="modal-priority-select">Select priority</label>
+                <select name="priority" id="priority-select-edit" required>
+                  <option value="" disabled hidden selected>
+                    Choose task's priority
+                  </option>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <div class="projects options">
+                <label for="modal-project-select">Select project</label>
+                <select name="project" id="project-select-edit" required>
+                  <option value="" disabled hidden selected>
+                    Choose task's project
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="save-btn">
+            <input type="submit" value="Save" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

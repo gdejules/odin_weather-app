@@ -1,0 +1,654 @@
+@font-face {
+  font-family: "Signika";
+  src:
+    url("./Signika-Bold.woff2") format("woff2"),
+    url("./Signika-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Signika";
+  src:
+    url("./Signika-SemiBold.woff2") format("woff2"),
+    url("./Signika-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Signika";
+  src:
+    url("./Signika-Medium.woff2") format("woff2"),
+    url("./Signika-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Signika";
+  src:
+    url("./Signika-Regular.woff2") format("woff2"),
+    url("./Signika-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Signika";
+  src:
+    url("./Signika-Light.woff2") format("woff2"),
+    url("./Signika-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,17,1.2,1440,20,1.333,3,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Step -1: 14.1667px → 15.0038px */
+  --step--1: clamp(0.8854rem, 0.8705rem + 0.0747vw, 0.9377rem);
+  /* Step 0: 17px → 20px */
+  --step-0: clamp(1.0625rem, 1.0089rem + 0.2679vw, 1.25rem);
+  /* Step 1: 20.4px → 26.66px */
+  --step-1: clamp(1.275rem, 1.1632rem + 0.5589vw, 1.6663rem);
+  /* Step 2: 24.48px → 35.5378px */
+  --step-2: clamp(1.53rem, 1.3325rem + 0.9873vw, 2.2211rem);
+  /* Step 3: 29.376px → 47.3719px */
+  --step-3: clamp(1.836rem, 1.5146rem + 1.6068vw, 2.9607rem);
+
+  /* @link https://utopia.fyi/space/calculator?c=320,17,1.2,1440,20,1.333,3,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-3xs: clamp(0.25rem, 0.2321rem + 0.0893vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vw, 0.625rem);
+  --space-xs: clamp(0.8125rem, 0.7768rem + 0.1786vw, 0.9375rem);
+  --space-s: clamp(1.0625rem, 1.0089rem + 0.2679vw, 1.25rem);
+  --space-m: clamp(1.625rem, 1.5536rem + 0.3571vw, 1.875rem);
+  --space-l: clamp(2.125rem, 2.0179rem + 0.5357vw, 2.5rem);
+  --space-xl: clamp(3.1875rem, 3.0268rem + 0.8036vw, 3.75rem);
+  --space-2xl: clamp(4.25rem, 4.0357rem + 1.0714vw, 5rem);
+  --space-3xl: clamp(6.375rem, 6.0536rem + 1.6071vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1429rem + 0.5357vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5625rem, 0.4554rem + 0.5357vw, 0.9375rem);
+  --space-xs-s: clamp(0.8125rem, 0.6875rem + 0.625vw, 1.25rem);
+  --space-s-m: clamp(1.0625rem, 0.8304rem + 1.1607vw, 1.875rem);
+  --space-m-l: clamp(1.625rem, 1.375rem + 1.25vw, 2.5rem);
+  --space-l-xl: clamp(2.125rem, 1.6607rem + 2.3214vw, 3.75rem);
+  --space-xl-2xl: clamp(3.1875rem, 2.6696rem + 2.5893vw, 5rem);
+  --space-2xl-3xl: clamp(4.25rem, 3.3214rem + 4.6429vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.0625rem, 0.6518rem + 2.0536vw, 2.5rem);
+  --space-s-2xl: clamp(1.0625rem, -0.0625rem + 5.625vw, 5rem);
+  --space-s-3xl: clamp(1.0625rem, -0.7768rem + 9.1964vw, 7.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: oklch(97.979% 0.00683 277.074);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  margin: 0;
+  font-family: "Signika", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: var(--step-2);
+  line-height: 1.5;
+  max-width: 20ch;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: var(--step-2);
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: var(--step-1);
+  line-height: 1.3;
+  max-width: 50ch;
+}
+
+p {
+  font-size: var(--step-0);
+  line-height: 1.3;
+  max-width: 80ch;
+}
+
+.caption {
+  font-size: var(--step--1);
+  line-height: 1.2;
+  max-width: 90ch;
+}
+
+#wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-rows: 64px auto 1fr;
+  grid-template-areas:
+    "sidebar head"
+    "sidebar form"
+    "sidebar body";
+  row-gap: var(--space-s);
+  column-gap: var(--space-s);
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+  overflow-y: auto;
+  grid-area: sidebar;
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--space-m);
+  padding-inline: var(--space-s);
+  padding-block: var(--space-xs);
+  background-color: lavender;
+}
+
+#header {
+  min-width: 0;
+  grid-area: head;
+  width: min(100%, 56rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-block: var(--space-2xs-xs);
+}
+
+#input {
+  min-width: 0;
+  height: max-content;
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s-l);
+  width: min(100%, 56rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-block: var(--space-xs-s);
+}
+
+#content {
+  min-width: 0;
+  grid-area: body;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--space-3xs); */
+  width: min(100%, 56rem);
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;
+}
+
+.folders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.tab {
+  display: flex;
+  gap: var(--space-3xs);
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: oklch(42.024% 0.00005 271.152);
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-xs);
+  font-family: "Signika";
+  font-size: var(--step-0);
+  font-weight: 300;
+}
+
+.logo {
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid oklch(84.559% 0.07223 286.495);
+}
+
+.tab:hover {
+  background-color: oklch(85.523% 0.05218 288.829 / 0.6);
+  color: oklch(21.987% 0.00237 271.152);
+  font-weight: normal;
+}
+
+.tab.active {
+  background-color: oklch(70.309% 0.1855 305.209 / 0.64);
+  color: white;
+  font-weight: normal;
+}
+
+.new-project-btn {
+  background-color: transparent;
+  border: 2px solid transparent; /* Creates the border width gap */
+  border-radius: 4px; /* Works perfectly with this method */
+  color: oklch(41.749% 0.00131 15.215);
+  padding: 4px;
+  width: 36px;
+  height: 36px;
+  font-family: "Signika";
+  font-size: var(--step--0);
+  font-weight: normal;
+}
+
+.new-project-btn:hover {
+  background:
+    linear-gradient(
+        oklch(75.914% 0.0642 287.805),
+        oklch(75.914% 0.0642 287.805)
+      )
+      padding-box,
+    linear-gradient(
+        to bottom,
+        oklch(72.016% 0.17534 305.307 / 0.878),
+        oklch(52.936% 0.29319 293.614 / 0.878)
+      )
+      border-box;
+  color: oklch(34.458% 0.00004 271.152);
+}
+
+.new-project-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  align-items: center;
+  > label,
+  input {
+    width: 100%;
+    font-family: "Signika";
+    font-size: var(--step--1);
+    font-weight: 500;
+  }
+  > label {
+    > input {
+      border-radius: 8px;
+      padding: var(--space-3xs);
+    }
+  }
+  > input {
+    border: 0;
+    border-radius: 8px;
+    color: aliceblue;
+    background-color: blueviolet;
+    padding: var(--space-3xs);
+  }
+}
+
+.form-sample {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding: 16px 16px;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  background-color: oklch(95.68% 0.02512 303.363);
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  font-family: "Signika";
+  font-size: var(--step--1);
+  font-weight: 300;
+  color: oklch(21.987% 0.00237 271.152);
+  background-color: oklch(95.68% 0.02512 303.363);
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+select:invalid {
+  color: oklch(48% 0.01 271);
+}
+
+#title,
+#description {
+  background-color: oklch(95.68% 0.02512 303.363);
+}
+
+#title-edit,
+#desc-edit {
+  background-color: oklch(97.979% 0.00683 277.074);
+}
+
+#title,
+#description,
+#title-edit,
+#desc-edit {
+  border: 0;
+  border-bottom: 1px solid oklch(92.686% 0.0001 271.152);
+  padding: var(--space-3xs);
+  font-family: "Signika";
+  width: 100%;
+}
+
+#title,
+#title-edit {
+  font-size: var(--step-0);
+  font-weight: 500;
+}
+
+#description,
+#desc-edit {
+  font-size: var(--step--1);
+  font-weight: 300;
+}
+
+.select-forms {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  > label,
+  legend {
+    font-family: "Signika";
+    font-size: var(--step--1);
+    font-weight: 300;
+    color: gray;
+  }
+  > input,
+  select {
+    padding: var(--space-3xs);
+  }
+}
+
+#date,
+#date-edit {
+  font-family: "Signika";
+  font-size: var(--step--1);
+  font-weight: 300;
+  color: oklch(21.987% 0.00237 271.152);
+  background-color: oklch(95.68% 0.02512 303.363);
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+.submit-btn,
+.save-btn {
+  align-self: self-end;
+  > input {
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-xs);
+    background-color: blueviolet;
+    font-family: "Signika";
+    font-size: var(--step-0);
+    color: aliceblue;
+    border: 0;
+    border-radius: 8px;
+  }
+}
+
+.bottom-part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-card {
+  width: 100%;
+  max-width: 48rem;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas:
+    "mark title title"
+    ". desc desc"
+    ". tags edit";
+  row-gap: var(--space-3xs);
+  column-gap: var(--space-2xs);
+  padding-block: var(--space-m);
+  padding-inline-start: var(--space-2xs);
+  padding-inline-end: var(--space-s);
+  border-bottom: solid 1px oklch(91.686% 0.0001 271.152);
+}
+
+.date {
+  font-size: var(--step--0);
+  font-weight: 300;
+  color: lightslategray;
+}
+
+.mark.container {
+  grid-area: mark;
+  position: relative;
+}
+
+.mark.container .mark {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.mark.container .check {
+  opacity: 0;
+}
+
+.mark.container:hover .check {
+  opacity: 1;
+}
+
+.mark.container:hover .circle {
+  opacity: 0;
+}
+
+.task-card.archived {
+  > .mark.container .circle {
+    opacity: 0;
+  }
+  > .mark.container .check {
+    opacity: 1;
+  }
+}
+
+.task-title {
+  grid-area: title;
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: oklch(27.412% 0.00991 196.763);
+  overflow-wrap: anywhere;
+}
+
+.description {
+  grid-area: desc;
+  font-size: var(--step--1);
+  font-weight: 300;
+  color: oklch(45.317% 0.00513 197.53);
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  grid-area: tags;
+  align-items: center;
+}
+
+.priority {
+  width: max-content;
+}
+
+.project {
+  display: flex;
+  justify-self: end;
+  width: max-content;
+  background-color: lightgrey;
+}
+
+.tag {
+  font-size: var(--step--1);
+  font-weight: 300;
+  color: oklch(41.844% 0.00264 16.27);
+  padding-inline: var(--space-2xs);
+  padding-block: var(--space-3xs);
+  border-radius: var(--space-2xs);
+}
+
+.edit-delete {
+  grid-area: edit;
+  display: flex;
+  gap: var(--space-xs);
+  visibility: hidden;
+}
+
+.edit-delete {
+  > .edit,
+  .delete {
+    display: flex;
+    gap: var(--space-3xs);
+    align-items: center;
+    border: 0;
+    font-family: "Signika";
+    font-size: var(--step--1);
+    font-weight: 300;
+    padding-inline: var(--space-2xs);
+    padding-block: var(--space-3xs);
+    border-radius: var(--space-2xs);
+  }
+  > .edit {
+    color: blueviolet;
+    background-color: aliceblue;
+    border: 1px solid blueviolet;
+  }
+  > .delete {
+    color: white;
+    background-color: crimson;
+  }
+}
+
+.edit:hover {
+  background-color: hsl(208, 72%, 87%);
+}
+
+.delete:hover {
+  background-color: hsl(348, 88%, 28%);
+}
+
+.task-card:hover {
+  background-color: hsl(223, 61%, 94%);
+  > .edit-delete {
+    visibility: visible;
+  }
+}
+
+/* modal style here */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Show the modal */
+.modal-overlay.show {
+  display: block;
+}
+
+/* The modal box */
+.modal-box {
+  background-color: oklch(97.979% 0.00683 277.074);
+  width: 90%;
+  max-width: 800px;
+  margin: 100px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.header {
+  background-color: oklch(96.879% 0.00883 277.074);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid oklch(91.686% 0.0001 271.152);
+  padding-block: var(--space-2xs);
+  padding-inline: var(--space-s);
+}
+
+.modal-title {
+  font-family: "Signika";
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: oklch(45.317% 0.00513 197.53);
+}
+
+/* Close button */
+.modal-close {
+  /* font-size: 24px; */
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: lightgrey;
+}
+
+.modal.top-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.modal.bottom-part {
+  border-bottom: 1px solid oklch(91.686% 0.0001 271.152);
+}
+
+.modal.header,
+.save-btn {
+  padding-block: var(--space-2xs);
+  padding-inline: var(--space-s);
+}
+
+.modal.top-part,
+.modal.bottom-part {
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-s);
+}
+
+.submit-btn:hover,
+.save-btn:hover {
+  > input {
+    background-color: oklch(47.376% 0.15041 301.374);
+  }
+}
+
+.modal-close:hover {
+  color: oklch(21.987% 0.00237 271.152);
+}
