@@ -1,2 +1,3 @@
-# odin-todo-list-project
-Another Todo list app for The Odin Project: JavaScript exercise
+# odin-weather-app
+
+Full stack project to show weather data in specicif location.
